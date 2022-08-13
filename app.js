@@ -17,8 +17,8 @@ app.use(bodyparser.urlencoded({ extended: false }));
 connectToMongo();
 
 // server start redirection
-app.get("/",(req,res)=>{
-    res.redirect("/category");
+app.get("/",async(req,res)=>{
+   await res.redirect("/category");
 })
 
 

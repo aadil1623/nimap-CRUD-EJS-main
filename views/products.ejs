@@ -45,10 +45,10 @@
                 </tbody>
             </table>
             <% if (page==1) {%>
-                <button disabled class="btn btn-primary rounded-circle mx-3">&#8249;</button>
+                <button disabled class="btn btn-primary  btn-lg mx-3">&#8249;</button>
                 <%}else{ %>
                     <a href="/product/?page=<%=parseInt(page)-1%>" class="previous round"><button
-                            class="btn btn-primary rounded-circle mx-3">&#8249;</button></a>
+                            class="btn btn-primary btn-lg mx-3">&#8249;</button></a>
                     <%}%>
 
                         <p class="d-inline">
@@ -56,11 +56,11 @@
                         </p>
 
                         <% if (foundData.next==undefined) {%>
-                            <button disabled class="btn btn-primary rounded-circle mx-3">&#8250;</button>
+                            <button disabled class="btn btn-primary btn-lg  mx-3">&#8250;</button>
                             <%}else{ %>
 
                                 <a href="/product/?page=<%=(parseInt(page)+1)%>" class="next round"><button
-                                        class="btn btn-primary rounded-circle mx-3">&#8250;</button></a>
+                                        class="btn btn-primary btn-lg mx-3">&#8250;</button></a>
                                 <%}%>
         </div>
 

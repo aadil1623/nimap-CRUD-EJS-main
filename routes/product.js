@@ -54,11 +54,11 @@ router.get("/",async(req, res) => {
 
 
 //Edit Product
-router.get("/:id/edit", (req, res) => {
-    product.findById(req.params.id, (err, foundData) => {
+router.get("/:id/edit",  (req, res) => {
+    product.findById(req.params.id, async(err, foundData) => {
         if (!err) {
             console.log(foundData);
-            res.render("editProduct", { foundData: foundData })   
+         await  res.render("editProduct", { foundData: foundData })   
         }
         else {
             console.log(err);
@@ -68,12 +68,12 @@ router.get("/:id/edit", (req, res) => {
 
 
 //Updating Product
-router.put("/:id", (req, res) => {
+router.put("/:id",  (req, res) => {
      const data = { name: req.body.productName }
 
-    product.findByIdAndUpdate(req.params.id, data, (err, foundData) => {
+    product.findByIdAndUpdate(req.params.id, data, async(err, foundData) => {
         if (!err) {
-            res.redirect("/product");   
+           await res.redirect("/product");   
         }
         else {
             console.log(err); 
@@ -83,10 +83,10 @@ router.put("/:id", (req, res) => {
 
 
 // Deleting Product
-router.delete("/:id", (req, res) => {
-    product.findByIdAndRemove(req.params.id, (err, foundData) => {
+router.delete("/:id",  (req, res) => {
+    product.findByIdAndRemove(req.params.id, async(err, foundData) => {
         if (!err) {
-            res.redirect("/product")
+          await  res.redirect("/product")
         }
         else {
             console.log(err);

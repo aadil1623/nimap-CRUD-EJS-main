@@ -4,7 +4,7 @@
 
     <h1 class="my-3">Category/<%=foundData.name%>
     </h1>
-    <a href="/category/<%=foundData._id%>/product/add" class="btn my-3 rounded-pill btn-md btn-primary">Add product</a>
+    <a href="/category/<%=foundData._id%>/product/add" class="btn my-2 rounded-pill btn btn-outline-danger">Add product</a>
   </div>
   </div>
 
@@ -13,7 +13,7 @@
     <% if (foundData.products.length> 0) { %>
       <div>
 
-        <table class="table-dark bg-dark rounded my-3">
+        <table class="table-dark bg-dark rounded my-2">
           <thead>
             <td class="h3">Category Id</td>
             <td class="h3">Category Name</td>
@@ -42,7 +42,7 @@
         </table>
       </div>
       <% }else{ %>
-        <h2 class="my-4">No Products in this category right now</h2>
+        <h2 class="my-5">No Products in this category right now</h2>
         <% } %>
   </div>
   <%- include("partials/footer") %>

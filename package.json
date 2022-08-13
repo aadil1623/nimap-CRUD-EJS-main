@@ -16,5 +16,13 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.11.4",
     "nodemon": "^2.0.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aadil1623/nimap-CRUD-EJS-main.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aadil1623/nimap-CRUD-EJS-main/issues"
+  },
+  "homepage": "https://github.com/aadil1623/nimap-CRUD-EJS-main#readme"
 }

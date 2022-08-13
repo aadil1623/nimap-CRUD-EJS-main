@@ -5,13 +5,13 @@
         <div class="jumbotron">
             <h1>Categories</h1>
             <div>
-                <a href="/category/add" class="btn text-center my-3 rounded-pill btn-primary">Add Category</a>
+                <a href="/category/add" class="btn text-center my-3  btn-primary">Add Category</a>
             </div>
         </div>
 
         <% if (foundData.results.length> 0) { %>
             <div class="container-fluid">
-                <table class="table-dark bg-dark rounded my-3">
+                <table class="table-dark bg-dark rounded my-2">
                     <thead>
                         <td class="h3">Category Id</td>
                         <td class="h3">Category Name</td>
@@ -41,17 +41,17 @@
 
                                 <td>
                                     <form action="/category/<%=foundData.results[i]._id%>?_method=delete" method="POST">
-                                        <button class="btn text-center btn-danger">delete</button>
+                                        <button class="btn btn-block btn-danger">delete</button>
                                     </form>
                                     <%}%>
                     </tbody>
                 </table>
 
                 <% if (page==1) {%>
-                    <button disabled class="btn btn-primary rounded-circle mx-3">&#8249;</button>
+                    <button disabled class="btn btn-block btn-primary btn-lg mx-3 my-5">&#8249;</button>
                     <%}else{ %>
                         <a href="/category/?page=<%=parseInt(page)-1%>"><button
-                                class="btn btn-primary rounded-circle mx-3">&#8249;</button></a>
+                                class="btn btn-primary   btn-block btn-lg mx-4">&#8249;</button></a>
                         <%}%>
 
                             <p class="d-inline">
@@ -60,11 +60,11 @@
 
 
                             <% if (foundData.next==undefined) {%>
-                                <button disabled class="btn btn-primary rounded-circle mx-3">&#8250;</button>
+                                <button disabled class="btn btn-primary  btn-block btn-lg mx-3">&#8250;</button>
                                 <%}else{ %>
 
                                     <a href="/category/?page=<%=(parseInt(page)+1)%>"><button 
-                                            class="btn btn-primary rounded-circle mx-3">&#8250;</button></a>
+                                            class="btn btn-primary btn-block btn-lg mx-3">&#8250;</button></a>
                                     <%}%>
 
 
