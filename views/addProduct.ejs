@@ -1,0 +1,14 @@
+<%- include("partials/header") %>
+
+    <div class="container">
+        <div class="form-group text-center">
+            <h3>Add to <%=foundData.name%>
+            </h3>
+            <form action="/category/<%=data%>/product" method="post">
+                <label class="d-block text-center my-3" for="productName">Add Product</label>
+                <input type="text" class="form-control" name="productName" id="" placeholder="Enter Product">
+                <button class="btn mx-auto text-center my-3 rounded-circle btn-primary ">+</button>
+            </form>
+        </div>
+    </div>
+<%- include("partials/footer") %>

@@ -1,0 +1,48 @@
+<%- include("partials/header") %>
+
+  <div class="container">
+
+    <h1 class="my-3">Category/<%=foundData.name%>
+    </h1>
+    <a href="/category/<%=foundData._id%>/product/add" class="btn my-3 rounded-pill btn-md btn-primary">Add product</a>
+  </div>
+  </div>
+
+  <div class="container">
+
+    <% if (foundData.products.length> 0) { %>
+      <div>
+
+        <table class="table-dark bg-dark rounded my-3">
+          <thead>
+            <td class="h3">Category Id</td>
+            <td class="h3">Category Name</td>
+            <td class="h3">Product Id</td>
+            <td class="h3">Product Name</td>
+          </thead>
+          <tbody>
+            <% for(let product of foundData.products) {%>
+              <tr>
+
+                <td>
+                  <%=foundData._id%>
+                </td>
+                <td>
+                  <%=foundData.name%>
+                </td>
+                <td>
+                  <%=product._id%>
+                </td>
+                <td>
+                  <%=product.name%>
+                </td>
+              </tr>
+              <%}%>
+          </tbody>
+        </table>
+      </div>
+      <% }else{ %>
+        <h2 class="my-4">No Products in this category right now</h2>
+        <% } %>
+  </div>
+  <%- include("partials/footer") %>

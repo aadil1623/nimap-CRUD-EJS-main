@@ -1,0 +1,13 @@
+<%- include("partials/header") %>
+
+    <div class="container">
+        <div class="form-group text-center">
+            <form action="/product/<%=foundData._id%>?_method=put" method="post">
+                <label class="d-block text-center my-3" for="productName">Update Product Name</label>
+                <input type="text" class="form-control" name="productName" value="<%=foundData.name%>"
+                    placeholder="Update Product">
+                <button class="btn text-center my-3 rounded-pill btn-primary "> Confirm</button>
+            </form>
+        </div>
+    </div>
+<%- include("partials/footer") %>

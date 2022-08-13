@@ -1,0 +1,79 @@
+<%- include("partials/header") %>
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Categories</h1>
+            <div>
+                <a href="/category/add" class="btn text-center my-3 rounded-pill btn-primary">Add Category</a>
+            </div>
+        </div>
+
+        <% if (foundData.results.length> 0) { %>
+            <div class="container-fluid">
+                <table class="table-dark bg-dark rounded my-3">
+                    <thead>
+                        <td class="h3">Category Id</td>
+                        <td class="h3">Category Name</td>
+                        <td class="h3">Products</td>
+                        <td class="h3">Update</td>
+                        <td class="h3">Delete</td>
+                    </thead>
+                    <tbody>
+                        <% for(var i=0;i<foundData.results.length;i++){%>
+                            <tr>
+
+                                <td>
+                                    <%=foundData.results[i]._id%>
+                                </td>
+                                <td> <a href="/category/<%=foundData.results[i]._id%>">
+                                        <%=foundData.results[i].name%>
+                                    </a></td>
+
+                                <td> <a href="/category/<%=foundData.results[i]._id%>"
+                                        class="btn text-center btn-primary ">Add
+                                        products</a></td>
+                                <td>
+                                    <form action="/category/<%=foundData.results[i]._id%>/edit" method="GET">
+                                        <button class="btn text-center btn-success">update</button>
+                                    </form>
+                                </td>
+
+                                <td>
+                                    <form action="/category/<%=foundData.results[i]._id%>?_method=delete" method="POST">
+                                        <button class="btn text-center btn-danger">delete</button>
+                                    </form>
+                                    <%}%>
+                    </tbody>
+                </table>
+
+                <% if (page==1) {%>
+                    <button disabled class="btn btn-primary rounded-circle mx-3">&#8249;</button>
+                    <%}else{ %>
+                        <a href="/category/?page=<%=parseInt(page)-1%>"><button
+                                class="btn btn-primary rounded-circle mx-3">&#8249;</button></a>
+                        <%}%>
+
+                            <p class="d-inline">
+                                <%= foundData.page%>
+                            </p>
+
+
+                            <% if (foundData.next==undefined) {%>
+                                <button disabled class="btn btn-primary rounded-circle mx-3">&#8250;</button>
+                                <%}else{ %>
+
+                                    <a href="/category/?page=<%=(parseInt(page)+1)%>"><button 
+                                            class="btn btn-primary rounded-circle mx-3">&#8250;</button></a>
+                                    <%}%>
+
+
+                                        <% }else{ %>
+                                            <h2 class="my-4">No Category right now</h2>
+                                            <% } %>
+
+
+            </div>
+
+    </div>
+    <%- include("partials/footer") %>
